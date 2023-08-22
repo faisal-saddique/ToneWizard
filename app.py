@@ -31,7 +31,7 @@ query = st.text_area(
     "Enter your text:", placeholder="Hello, how are you?", height=200)
 
 role = st.radio("Select the emotion you want to infuse:",
-    options=('Gangster','Comedy', 'Drama', 'Documentary', 'Anger', 'Excitement', 'Romance', 'Suspense', 'Calmness', 'Joy', 'Melancholy', 'Inspiration', 'Nostalgia', 'Adventure', 'Thoughtfulness', 'Energy', 'Reflection', 'Hope', 'Fear', 'Silliness', 'Peace', 'Mystery', 'Curiosity', 'Confidence', 'Anxiety', 'Amusement', 'Bittersweetness'),
+    options=('Gangster', 'Angry', 'Friendly', 'Confident'),
     index=0,
     disabled=False,
     horizontal=True,
