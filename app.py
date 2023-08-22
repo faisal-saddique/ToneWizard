@@ -31,7 +31,7 @@ query = st.text_area(
     "Enter your text:", placeholder="Hello, how are you?", height=200)
 
 role = st.radio("Select the emotion you want to infuse:",
-    options=('Gangster', 'Angry', 'Friendly', 'Confident'),
+    options=('Gangster', 'Angry', 'Friendly', 'Confident', 'Curious'),
     index=0,
     disabled=False,
     horizontal=True,
