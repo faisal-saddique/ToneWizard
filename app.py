@@ -27,8 +27,8 @@ sidebar()
 
 st.title("ToneWizard - Transform Your Text's Emotion")
 
-query = st.text_input(
-    "Enter your text:", placeholder="Hello, how are you?")
+query = st.text_area(
+    "Enter your text:", placeholder="Hello, how are you?", height=400)
 
 role = st.radio("Select the emotion you want to infuse:",
     options=('Comedy', 'Drama', 'Documentary', 'Anger', 'Excitement', 'Romance', 'Suspense', 'Calmness', 'Joy', 'Melancholy', 'Inspiration', 'Nostalgia', 'Adventure', 'Thoughtfulness', 'Energy', 'Reflection', 'Hope', 'Fear', 'Silliness', 'Peace', 'Mystery', 'Curiosity', 'Confidence', 'Anxiety', 'Amusement', 'Bittersweetness'),
