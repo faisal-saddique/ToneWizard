@@ -1,3 +1,6 @@
+import streamlit as st
+
+content = '''
 # ToneWizard - Magical Tone Changer Tool
 
 ![1baa5b39a0ee85bebdafa687ceb0b42c.gif](https://imgtr.ee/images/2023/08/22/1baa5b39a0ee85bebdafa687ceb0b42c.gif)
@@ -44,3 +47,8 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Thank you for choosing ToneWizard to add a touch of magic to your text! 🌟✨
+'''
+
+def sidebar():
+    with st.sidebar:
+        st.markdown(content)
