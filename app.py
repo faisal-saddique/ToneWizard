@@ -30,7 +30,7 @@ st.set_page_config(
 query = st.text_area(
     "Enter your text:", placeholder="Hello, how are you?", height=200)
 
-selected_roles = st.multiselect(
+selected_roles = st.checkbox(
     "Select the emotions you want to infuse:",
     options=[
         'Gangster 🕶️', 'Angry 😠', 'Friendly 😀', 'Confident 😎',
