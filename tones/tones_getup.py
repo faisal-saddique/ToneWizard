@@ -1,7 +1,6 @@
 from langchain.schema import HumanMessage, SystemMessage
 
 def message_generator(query: str, role: list):
-    role = role.lower()
 
     messages = [
         SystemMessage(
