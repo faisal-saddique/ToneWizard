@@ -23,23 +23,24 @@ st.set_page_config(
     layout="wide",
 )
 
-sidebar()
+# sidebar()
 
-st.title("ToneWizard - Transform Your Text's Emotion")
+# st.title("ToneWizard - Transform Your Text's Emotion")
 
 query = st.text_area(
     "Enter your text:", placeholder="Hello, how are you?", height=200)
 
 role = st.radio("Select the emotion you want to infuse:",
-    options=('Gangster', 'Angry', 'Friendly', 'Confident', 'Curious'),
+    options=('Gangster 🕶️', 'Angry 😠', 'Friendly 😀', 'Confident 😎', 'Curious 🤔', 'Caring ❤️', 'Arrogant 😏', 'Loving ❤️', 'Simple 😊', 'Optimistic 😄', 'Pessimistic 😔', 'Sad 😢', 'Happy 😃', 'Sincere 😇', 'Cooperative 🤝'),
     index=0,
     disabled=False,
     horizontal=True,
     label_visibility="visible")
 
+
 go_button = st.button("Transform")
 
-st.subheader("Transformed Text:")
+# st.subheader("Transformed Text:")
 
 st_cb = StreamHandler(st.empty())
 chat = ChatOpenAI(max_tokens=1000, streaming=True, callbacks=[st_cb])
