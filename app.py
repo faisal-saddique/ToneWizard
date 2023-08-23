@@ -57,5 +57,5 @@ chat = ChatOpenAI(max_tokens=1000, streaming=True, callbacks=[st_cb])
 
 if query and go_button:
     # messages = get_translation_getup(query=query)
-    messages = get_mood_getup(query=query, roles=selected_roles)
+    messages = get_mood_getup(query=query, role=selected_roles)
     chat(messages)
