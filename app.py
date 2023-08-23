@@ -30,16 +30,23 @@ st.set_page_config(
 query = st.text_area(
     "Enter your text:", placeholder="Hello, how are you?", height=200)
 
-selected_roles = st.checkbox(
-    "Select the emotions you want to infuse:",
-    options=[
-        'Gangster 🕶️', 'Angry 😠', 'Friendly 😀', 'Confident 😎',
-        'Curious 🤔', 'Caring ❤️', 'Arrogant 😏', 'Loving ❤️',
-        'Simple 😊', 'Optimistic 😄', 'Pessimistic 😔', 'Sad 😢',
-        'Happy 😃', 'Sincere 😇', 'Cooperative 🤝'
-    ],
-    default=['Friendly 😀'],  # You can set default selected emotions here
-)
+# Checkbox for selecting emotions
+st.write("Select the emotions you want to infuse:")
+emotions = [
+    'Gangster 🕶️', 'Angry 😠', 'Friendly 😀', 'Confident 😎',
+    'Curious 🤔', 'Caring ❤️', 'Arrogant 😏', 'Loving ❤️',
+    'Simple 😊', 'Optimistic 😄', 'Pessimistic 😔', 'Sad 😢',
+    'Happy 😃', 'Sincere 😇', 'Cooperative 🤝'
+]
+
+selected_roles = []
+
+for emotion in emotions:
+    agree = st.checkbox(emotion, key=emotion)
+    if agree:
+        selected_roles.append(emotion)
+
+# selected_roles = st.multiselect("Emotions:", emotions, default=['Friendly 😀'])
 
 go_button = st.button("Transform")
 
