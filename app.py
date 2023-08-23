@@ -30,13 +30,16 @@ st.set_page_config(
 query = st.text_area(
     "Enter your text:", placeholder="Hello, how are you?", height=200)
 
-role = st.radio("Select the emotion you want to infuse:",
-    options=('Gangster 🕶️', 'Angry 😠', 'Friendly 😀', 'Confident 😎', 'Curious 🤔', 'Caring ❤️', 'Arrogant 😏', 'Loving ❤️', 'Simple 😊', 'Optimistic 😄', 'Pessimistic 😔', 'Sad 😢', 'Happy 😃', 'Sincere 😇', 'Cooperative 🤝'),
-    index=0,
-    disabled=False,
-    horizontal=True,
-    label_visibility="visible")
-
+selected_roles = st.multiselect(
+    "Select the emotions you want to infuse:",
+    options=[
+        'Gangster 🕶️', 'Angry 😠', 'Friendly 😀', 'Confident 😎',
+        'Curious 🤔', 'Caring ❤️', 'Arrogant 😏', 'Loving ❤️',
+        'Simple 😊', 'Optimistic 😄', 'Pessimistic 😔', 'Sad 😢',
+        'Happy 😃', 'Sincere 😇', 'Cooperative 🤝'
+    ],
+    default=['Friendly 😀'],  # You can set default selected emotions here
+)
 
 go_button = st.button("Transform")
 
@@ -47,5 +50,5 @@ chat = ChatOpenAI(max_tokens=1000, streaming=True, callbacks=[st_cb])
 
 if query and go_button:
     # messages = get_translation_getup(query=query)
-    messages = get_mood_getup(query=query, role=role)
+    messages = get_mood_getup(query=query, roles=selected_roles)
     chat(messages)
