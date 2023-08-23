@@ -41,10 +41,16 @@ emotions = [
 
 selected_roles = []
 
-for emotion in emotions:
-    agree = st.checkbox(emotion, key=emotion)
-    if agree:
-        selected_roles.append(emotion)
+col1, col2, col3, col4, col5 = st.columns(5)
+
+for idx, emotion in enumerate(emotions):
+    column = idx % 5
+    with col1 if column == 0 else col2 if column == 1 else col3 if column == 2 else col4 if column == 3 else col5:
+        agree = st.checkbox(emotion, key=idx)
+        if agree:
+            selected_roles.append(emotion)
+
+        
 
 # selected_roles = st.multiselect("Emotions:", emotions, default=['Friendly 😀'])
 
